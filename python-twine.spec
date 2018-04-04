@@ -1,8 +1,8 @@
 %global srcname twine
 
 Name:           python-%{srcname}
-Version:        1.7.4
-Release:        3%{?dist}
+Version:        1.11.0
+Release:        1%{?dist}
 Summary:        Collection of utilities for interacting with PyPI
 
 License:        ASL 2.0
@@ -20,16 +20,18 @@ Currently it only supports registering projects and uploading distributions.
 %package -n python2-%{srcname}
 Summary:        %{summary}
 Requires:       python2-clint
-Requires:       python2-pkginfo >= 1.0
+Requires:       python2-pkginfo >= 1.4.2
+Requires:       python-tqdn
 Requires:       python-requests >= 2.3.0
-Requires:       python-requests-toolbelt >= 0.5.1
+Requires:       python-requests-toolbelt >= 0.8.0
 Requires:       python-setuptools >= 0.7.0
 # Test requirements
 BuildRequires:  python2-clint
 BuildRequires:  python-devel
-BuildRequires:  python2-pkginfo >= 1.0
+BuildRequires:  python2-pkginfo >= 1.4.2
+BuildRequires:  python-tqdn
 BuildRequires:  python-requests >= 2.3.0
-BuildRequires:  python-requests-toolbelt >= 0.5.1
+BuildRequires:  python-requests-toolbelt >= 0.8.0
 BuildRequires:  python-setuptools >= 0.7.0
 %{?python_provide:%python_provide python2-%{srcname}}
 
@@ -66,6 +68,9 @@ ln -s %{_bindir}/twine-%{python2_version} %{buildroot}%{_bindir}/twine-2
 
 
 %changelog
+* Wed Apr 04 2018 Tristan Cacquera <tdecacqu@redhat.com> - 1.11.0-1
+- Bump version to 1.11.0
+
 * Mon Jul 18 2016 Jeremy Cline <jeremy@jcline.org> - 1.7.4-3
 - Keep objects.inv to support intersphinx documentation
 - Skip building the docs package until python-releases is available
