@@ -1,7 +1,7 @@
 %global srcname twine
 
 Name:           python-%{srcname}
-Version:        1.11.0
+Version:        1.15.0
 Release:        1%{?dist}
 Summary:        Collection of utilities for interacting with PyPI
 
@@ -68,6 +68,9 @@ ln -s %{_bindir}/twine-%{python2_version} %{buildroot}%{_bindir}/twine-2
 
 
 %changelog
+* Tue Oct 15 2018 Fabien Boucher <fboucher@redhat.com> - 1.15.0-1
+- Bump version to 1.15.0
+
 * Wed Apr 04 2018 Tristan Cacquera <tdecacqu@redhat.com> - 1.11.0-1
 - Bump version to 1.11.0
 
